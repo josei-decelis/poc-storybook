@@ -1,0 +1,692 @@
+{
+    "pipes": [
+        {
+            "name": "SafeHtmlPipe",
+            "id": "pipe-SafeHtmlPipe-80d4cc108c3dd6de7c67b102088589f88ea9fc748bbf34953c7a0c3b3848aa1fac8066661812db7a874b064ca4782d192e3a69cb762243a2767916822eb3c9dc",
+            "file": "src/app/utils/safe-html.pipe.ts",
+            "type": "pipe",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "transform",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "SafeHtml",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "standalone": true,
+            "ngname": "safeHtml",
+            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\r\nimport { DomSanitizer, SafeHtml } from '@angular/platform-browser';\r\n\r\n@Pipe({\r\n  name: 'safeHtml',\r\n  standalone: true\r\n})\r\nexport class SafeHtmlPipe implements PipeTransform {\r\n\r\n  constructor(private sanitizer: DomSanitizer) { }\r\n\r\n  transform(value: any): SafeHtml {\r\n    return this.sanitizer.bypassSecurityTrustHtml(value);\r\n  }\r\n}\r\n"
+        }
+    ],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-f65198cbc0e32b2acd56ef7434307b822f5eb31259d3a8e04f29a8d30aa055ea96ae73a4bb579ac2421d784bc361540edcd3ff4f2838373787590ffabbfc12da",
+            "file": "src/app/app.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "iconExample",
+                    "defaultValue": "`\r\n<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n  <path d=\"M12 2L15 8H21L16 12L18 18L12 14L6 18L8 12L3 8H9L12 2Z\" fill=\"white\"/>\r\n</svg>\r\n`",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "panelOpenState",
+                    "defaultValue": "signal(false)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'angular-storybook'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "RouterOutlet"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "MatButtonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatExpansionModule",
+                    "type": "module"
+                },
+                {
+                    "name": "BotonDosComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "BotonTresComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { RouterOutlet } from '@angular/router';\r\nimport { ButtonComponent } from './components/button/button.component';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatExpansionModule } from '@angular/material/expansion';\r\nimport { ChangeDetectionStrategy, Component, signal } from '@angular/core';\r\nimport { BotonDosComponent } from './components/boton-dos/boton-dos.component';\r\nimport { BotonTresComponent } from './components/boton-tres/boton-tres.component';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  standalone: true,\r\n  imports: [RouterOutlet, ButtonComponent, MatButtonModule, MatExpansionModule,BotonDosComponent,BotonTresComponent],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  templateUrl: './app.component.html',\r\n  styleUrl: './app.component.scss'\r\n})\r\nexport class AppComponent {\r\n  title = 'angular-storybook';\r\n  readonly panelOpenState = signal(false);\r\n\r\n  iconExample = `\r\n<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n  <path d=\"M12 2L15 8H21L16 12L18 18L12 14L6 18L8 12L3 8H9L12 2Z\" fill=\"white\"/>\r\n</svg>\r\n`;\r\n}\r\n",
+            "styleUrl": "./app.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div>\r\n\r\n<!-- <app-button buttonText=\"boton\">\r\n</app-button>\r\n<app-button  [icon]=\"true\">\r\n  <svg width=\"15\" height=\"14\" viewBox=\"0 0 15 14\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n    <g clip-path=\"url(#clip0_4744_496919)\">\r\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\"\r\n        d=\"M12.2832 11.9497C13.596 10.637 14.3335 8.85651 14.3335 7C14.3335 5.14348 13.596 3.36301 12.2832 2.05025C10.9705 0.737498 9.19001 0 7.3335 0C5.47698 0 3.6965 0.737498 2.38375 2.05025C1.07099 3.36301 0.333496 5.14348 0.333496 7C0.333496 8.85651 1.07099 10.637 2.38375 11.9497C3.6965 13.2625 5.47698 14 7.3335 14C9.19001 14 10.9705 13.2625 12.2832 11.9497ZM11.3897 4.33133C11.3718 4.28262 11.3456 4.23837 11.3125 4.20113C11.2795 4.16379 11.2404 4.13416 11.1972 4.11395C11.1541 4.09374 11.1079 4.08333 11.0612 4.08333C11.0145 4.08333 10.9682 4.09374 10.9251 4.11395C10.882 4.13416 10.8428 4.16379 10.8098 4.20113L6.09081 9.53139L3.85699 7.00779C3.79033 6.9325 3.69991 6.89021 3.60564 6.89021C3.51136 6.89021 3.42094 6.9325 3.35428 7.00779C3.28761 7.08308 3.25016 7.18519 3.25016 7.29167C3.25016 7.39814 3.28761 7.50025 3.35428 7.57554L5.83946 10.3822C5.87244 10.4195 5.91161 10.4492 5.95474 10.4694C5.99788 10.4896 6.04412 10.5 6.09081 10.5C6.13751 10.5 6.18375 10.4896 6.22688 10.4694C6.27002 10.4492 6.30919 10.4195 6.34217 10.3822L11.3125 4.76888C11.3456 4.73163 11.3718 4.68739 11.3897 4.63867C11.4076 4.58996 11.4168 4.53774 11.4168 4.485C11.4168 4.43226 11.4076 4.38004 11.3897 4.33133Z\"\r\n        fill=\"#7CB342\" />\r\n    </g>\r\n    <defs>\r\n      <clipPath id=\"clip0_4744_496919\">\r\n        <rect width=\"14\" height=\"14\" fill=\"white\" transform=\"translate(0.333496)\" />\r\n      </clipPath>\r\n    </defs>\r\n  </svg>\r\n</app-button>\r\n<button>asd</button>\r\n -->\r\n<app-boton-dos buttonText=\"boton\" [icon]=\"iconExample\"></app-boton-dos>\r\n<app-boton-tres icon=\"src/assets/icons/succes.svg\"></app-boton-tres>\r\n</div>\r\n"
+        },
+        {
+            "name": "BotonDosComponent",
+            "id": "component-BotonDosComponent-3db8e4b8a69e07508ff3f11d730d10db2530179bfdc015795bd24ce1cf4eb156aed036882fab0d42820c8f39dbf256e610274bd8cdd8c0cc099aaa479d6d9b64",
+            "file": "src/app/components/boton-dos/boton-dos.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-boton-dos",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./boton-dos.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "buttonText",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "icon",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "isDisabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "width",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "event",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "getIconUrl",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "SafeResourceUrl | undefined",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onClick",
+                    "args": [
+                        {
+                            "name": "e",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "e",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "SafeHtmlPipe",
+                    "type": "pipe"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, EventEmitter, Input, Output } from '@angular/core';\r\nimport { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';\r\nimport { SafeHtmlPipe } from '../../utils/safe-html.pipe';\r\n\r\n@Component({\r\n  selector: 'app-boton-dos',\r\n  standalone: true,\r\n  imports: [CommonModule, SafeHtmlPipe],\r\n  templateUrl: './boton-dos.component.html',\r\n  styleUrl: './boton-dos.component.scss'\r\n})\r\nexport class BotonDosComponent {\r\n\r\n  @Input() buttonText?: string = '';\r\n  @Input() icon?: string = '';\r\n  @Input() isDisabled: boolean = false;\r\n  @Input() width: number = 0;\r\n\r\n  @Output() event = new EventEmitter<any>();\r\n\r\n  constructor(private sanitizer: DomSanitizer) {}\r\n\r\n  public onClick(e: Event): void {\r\n    if (!this.isDisabled) {\r\n      this.event.emit(e);\r\n    }\r\n  }\r\n\r\n  getIconUrl(): SafeResourceUrl | undefined {\r\n    if (this.icon) {\r\n      return this.sanitizer.bypassSecurityTrustResourceUrl(this.icon);\r\n    }\r\n    return undefined;\r\n  }\r\n\r\n  get buttonWidth(): string {\r\n    return this.width === 0 ? 'auto' : `${this.width}px`;\r\n  }\r\n  get shouldDisplayButton(): boolean {\r\n    return !!this.buttonText || !!this.icon;\r\n  }\r\n}\r\n",
+            "styleUrl": "./boton-dos.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 20,
+                "jsdoctags": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "accessors": {
+                "buttonWidth": {
+                    "name": "buttonWidth",
+                    "getSignature": {
+                        "name": "buttonWidth",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 37
+                    }
+                },
+                "shouldDisplayButton": {
+                    "name": "shouldDisplayButton",
+                    "getSignature": {
+                        "name": "shouldDisplayButton",
+                        "type": "boolean",
+                        "returnType": "boolean",
+                        "line": 40
+                    }
+                }
+            },
+            "templateData": "<!-- <button type=\"button\" (click)=\"onClick($event)\" [ngClass]=\"{ 'disabled': isDisabled }\" [style.width]=\"buttonWidth\" [disabled]=\"isDisabled\">\r\n  @if (icon) {\r\n    <span [innerHTML]=\"icon | safeHtml\"></span>\r\n  }\r\n  @if (buttonText) {\r\n    <span>{{ buttonText }}</span>\r\n  }\r\n</button> -->\r\n\r\n\r\n @if (shouldDisplayButton) {\r\n  <button type=\"button\" (click)=\"onClick($event)\" [ngClass]=\"{ 'disabled': isDisabled }\" [style.width]=\"buttonWidth\" [disabled]=\"isDisabled\">\r\n    @if (icon && !buttonText) {\r\n      <span [innerHTML]=\"icon | safeHtml\"></span>\r\n    }\r\n    @if (buttonText) {\r\n      <span>{{ buttonText }}</span>\r\n    }\r\n  </button>\r\n}\r\n"
+        },
+        {
+            "name": "BotonTresComponent",
+            "id": "component-BotonTresComponent-0ab975e28cc88c0d84bd8ec00886ead308f6575ccd140987eb3d4fc193202175aab0ca80acaf6a43bd097d6e10ee1f1236d91620912f68428aac6aaf19fb187a",
+            "file": "src/app/components/boton-tres/boton-tres.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-boton-tres",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./boton-tres.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "buttonText",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "iconUrl",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "isDisabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "width",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "event",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "getIconUrl",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "SafeResourceUrl | undefined",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onClick",
+                    "args": [
+                        {
+                            "name": "e",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "e",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\r\nimport { Component, EventEmitter, Input, Output } from '@angular/core';\r\nimport { DomSanitizer, SafeHtml, SafeResourceUrl } from '@angular/platform-browser';\r\n\r\n@Component({\r\n  selector: 'app-boton-tres',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './boton-tres.component.html',\r\n  styleUrl: './boton-tres.component.scss'\r\n})\r\nexport class BotonTresComponent {\r\n\r\n  @Input() buttonText?: string = '';\r\n  @Input() iconUrl?: string = '';\r\n  @Input() isDisabled: boolean = false;\r\n  @Input() width: number = 0;\r\n\r\n  @Output() event = new EventEmitter<any>();\r\n\r\n  constructor(private sanitizer: DomSanitizer) {}\r\n\r\n  public onClick(e: Event): void {\r\n    if (!this.isDisabled) {\r\n      this.event.emit(e);\r\n    }\r\n  }\r\n\r\n  getIconUrl(): SafeResourceUrl | undefined {\r\n    if (this.iconUrl) {\r\n      return this.sanitizer.bypassSecurityTrustResourceUrl(this.iconUrl);\r\n    }\r\n    return undefined;\r\n  }\r\n\r\n  get buttonWidth(): string {\r\n    return this.width === 0 ? 'auto' : `${this.width}px`;\r\n  }\r\n\r\n  get shouldDisplayButton(): boolean {\r\n    return !!this.buttonText || !!this.iconUrl;\r\n  }\r\n}\r\n",
+            "styleUrl": "./boton-tres.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 19,
+                "jsdoctags": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "accessors": {
+                "buttonWidth": {
+                    "name": "buttonWidth",
+                    "getSignature": {
+                        "name": "buttonWidth",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 36
+                    }
+                },
+                "shouldDisplayButton": {
+                    "name": "shouldDisplayButton",
+                    "getSignature": {
+                        "name": "shouldDisplayButton",
+                        "type": "boolean",
+                        "returnType": "boolean",
+                        "line": 40
+                    }
+                }
+            },
+            "templateData": "@if (shouldDisplayButton) {\r\n  <button type=\"button\" (click)=\"onClick($event)\" [ngClass]=\"{ 'disabled': isDisabled }\" [style.width]=\"buttonWidth\" [disabled]=\"isDisabled\">\r\n    @if (iconUrl && !buttonText) {\r\n      <span [innerHTML]=\"iconUrl | safeHtml\"></span>\r\n    }\r\n    @if (buttonText) {\r\n      <span>{{ buttonText }}</span>\r\n    }\r\n  </button>\r\n}\r\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-dc80a8726fe04000c978d03000cb60525b83715dd2281f4a5704620bbdafedc85a2988ba4636490495e478ee7402a5be8c2bb3197fd5f3ee98e3f61b07cfec6e",
+            "file": "src/app/components/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-button",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "buttonText",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "fullWidth",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "icon",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isDisabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './button.component.html',\r\n  styleUrl: './button.component.scss'\r\n})\r\nexport class ButtonComponent {\r\n\r\n  @Input()\r\n  buttonText = '';\r\n\r\n  @Input()\r\n  isDisabled = false;\r\n\r\n  /*   @Input()\r\n  icon: string | null = null; */\r\n  @Input() icon = false ;\r\n  @Input() fullWidth = false ;\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n}\r\n",
+            "styleUrl": "./button.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<button type=\"button\" (click)=\"onClick.emit($event)\" [ngClass]=\"{'icon-only': !buttonText,'w-100': fullWidth}\"\r\n  [disabled]=\"isDisabled\">\r\n  @if(!buttonText){\r\n  <ng-content></ng-content>\r\n  }\r\n  @if (buttonText) {\r\n  <span>{{buttonText}}</span>\r\n  }\r\n</button>\r\n"
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "appConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\r\n  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideAnimationsAsync()]\r\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/app.config.ts": [
+                {
+                    "name": "appConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\r\n  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideAnimationsAsync()]\r\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.config.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "appConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/boton-dos/boton-dos.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BotonDosComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/boton-tres/boton-tres.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BotonTresComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/utils/safe-html.pipe.ts",
+                "type": "pipe",
+                "linktype": "pipe",
+                "name": "SafeHtmlPipe",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

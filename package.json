@@ -6,15 +6,19 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "storybook": "ng run angular-storybook:storybook",
+    "build-storybook": "ng run angular-storybook:build-storybook"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.1.0",
+    "@angular/cdk": "^18.1.2",
     "@angular/common": "^18.1.0",
     "@angular/compiler": "^18.1.0",
     "@angular/core": "^18.1.0",
     "@angular/forms": "^18.1.0",
+    "@angular/material": "^18.1.2",
     "@angular/platform-browser": "^18.1.0",
     "@angular/platform-browser-dynamic": "^18.1.0",
     "@angular/router": "^18.1.0",
@@ -26,6 +30,16 @@
     "@angular-devkit/build-angular": "^18.1.2",
     "@angular/cli": "^18.1.2",
     "@angular/compiler-cli": "^18.1.0",
+    "@chromatic-com/storybook": "^1.6.1",
+    "@compodoc/compodoc": "^1.1.25",
+    "@storybook/addon-docs": "^8.2.6",
+    "@storybook/addon-essentials": "^8.2.6",
+    "@storybook/addon-interactions": "^8.2.6",
+    "@storybook/addon-links": "^8.2.6",
+    "@storybook/addon-onboarding": "^8.2.6",
+    "@storybook/angular": "^8.2.6",
+    "@storybook/blocks": "^8.2.6",
+    "@storybook/test": "^8.2.6",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
@@ -33,6 +47,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "storybook": "^8.2.6",
     "typescript": "~5.5.2"
   }
 }

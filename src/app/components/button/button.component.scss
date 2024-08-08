@@ -1,50 +1,41 @@
-$font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-weight: 700;
-$border-radius: 3em;
-$primary-color: white;
-$primary-bg-color: #1ea7fd;
-$secondary-color: #333;
-$secondary-bg-color: transparent;
-$secondary-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-$small-font-size: 12px;
-$small-padding: 10px 16px;
-$medium-font-size: 14px;
-$medium-padding: 11px 20px;
-$large-font-size: 16px;
-$large-padding: 12px 24px;
 
-.storybook-button {
-  font-family: $font-family;
-  font-weight: $font-weight;
-  border: 0;
-  border-radius: $border-radius;
+
+button {
+  border: none;
+  background: #11799b;
+  color: #fff;
+  font-family: "Open Sans";
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 32px;
   cursor: pointer;
-  display: inline-block;
-  line-height: 1;
-
-  &--primary {
-    color: $primary-color;
-    background-color: $primary-bg-color;
+  &.icon-only{
+    padding: 5px;
   }
-
-  &--secondary {
-    color: $secondary-color;
-    background-color: $secondary-bg-color;
-    box-shadow: $secondary-box-shadow;
+  &.w-100{
+    width: 100%;
   }
-
-  &--small {
-    font-size: $small-font-size;
-    padding: $small-padding;
+  &:not(:disabled):active{
+    opacity: .9;
   }
-
-  &--medium {
-    font-size: $medium-font-size;
-    padding: $medium-padding;
+  &:disabled{
+    background: #DCDCDC;
+    cursor: none;
+    svg{
+      color: #9A9A9A;
+      ;
+    }
   }
-
-  &--large {
-    font-size: $large-font-size;
-    padding: $large-padding;
+  ::ng-deep svg {
+    width: 22px;
+    height: 22px;
+    path{
+      fill: #fff;
+    }
   }
 }
+

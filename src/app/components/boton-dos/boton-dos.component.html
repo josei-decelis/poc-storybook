@@ -1,0 +1,20 @@
+<!-- <button type="button" (click)="onClick($event)" [ngClass]="{ 'disabled': isDisabled }" [style.width]="buttonWidth" [disabled]="isDisabled">
+  @if (icon) {
+    <span [innerHTML]="icon | safeHtml"></span>
+  }
+  @if (buttonText) {
+    <span>{{ buttonText }}</span>
+  }
+</button> -->
+
+
+ @if (shouldDisplayButton) {
+  <button type="button" (click)="onClick($event)" [ngClass]="{ 'disabled': isDisabled }" [style.width]="buttonWidth" [disabled]="isDisabled">
+    @if (icon && !buttonText) {
+      <span [innerHTML]="icon | safeHtml"></span>
+    }
+    @if (buttonText) {
+      <span>{{ buttonText }}</span>
+    }
+  </button>
+}

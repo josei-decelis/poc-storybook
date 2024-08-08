@@ -1,0 +1,8 @@
+  <button type="button" (click)="onClick($event)" [ngClass]="{ 'disabled': isDisabled }" [style.width]="buttonWidth" [disabled]="isDisabled">
+    @if (true) {
+      <span [innerHTML]="icon | safeHtml"></span>
+    }
+    @if (buttonText) {
+      <span>{{ buttonText }}</span>
+    }
+  </button>
